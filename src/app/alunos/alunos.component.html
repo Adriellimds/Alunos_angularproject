@@ -10,10 +10,12 @@
 <ul class="alunoscomponent">
   <li *ngFor="let aluno of alunos">
     <button [class.selected]="aluno === alunoselecionado" type="button" (click)="onSelect(aluno)">
-      <span class="id">{{aluno.id}}</span>
-      <span class="nome">{{aluno.nome}}</span>
-      <span class="nasc">{{aluno.nasc | date}}</span>
-      <span class="casa">{{aluno.casa}}</span>
+      <span class="id"> {{aluno.id}}</span>
+      <div class="buttondiv">
+      <span class="nome">nome: {{aluno.nome}}</span>
+      <span class="nasc">nascimento: {{aluno.nasc | date}}</span>
+      <span class="casa">casa: {{aluno.casa}}</span>
+    </div>
     </button>
   </li>
 </ul>

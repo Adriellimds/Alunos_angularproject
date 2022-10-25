@@ -2,10 +2,32 @@ ul {
   list-style: none;
 }
 
+button{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  width: 25rem;
+}
+.buttondiv{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 20rem;
+}
+
 .id {
   color: green;
+  font-size: 2rem;
+  width: 4rem;
 }
 
 .nasc {
-  color: darkblue;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.casa {
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
