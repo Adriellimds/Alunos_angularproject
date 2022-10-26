@@ -1,21 +1,27 @@
 <div *ngIf="alunoselecionado">
   <h2>{{alunoselecionado.nome | uppercase}}</h2>
-  <div>id: {{alunoselecionado.id}}</div>
-  <div>
-    <label for="aluno-nome">Nome do Aluno: </label>
+  <div class="info">ID: {{alunoselecionado.id}}</div>
+  <div class="info">
+    <label for="aluno-nome">ALUNO SELECIONADO: </label>
     <input id="aluno-nome" [(ngModel)]="alunoselecionado.nome" placeholder="nome">
   </div>
 </div>
 
 <table class="alunoscomponent">
-  <li *ngFor="let aluno of alunos">
-    <button [class.selected]="aluno === alunoselecionado" type="button" (click)="onSelect(aluno)">
-      <span class="id"> {{aluno.id}}</span>
-      <div class="buttondiv">
-      <span class="nome">nome: {{aluno.nome}}</span>
-      <span class="nasc">nascimento: {{aluno.nasc | date}}</span>
-      <span class="casa">casa: {{aluno.casa}}</span>
+  <tr>
+    <div class="tabletitle">
+      <div class="items">ID</div>
+      <div class="items">NOME DO ALUNO</div>
+      <div class="items">DATA DE NASCIMENTO</div>
+      <div class="items">CASA</div>
     </div>
+  </tr>
+  <tr *ngFor="let aluno of alunos">
+    <button [class.selected]="aluno === alunoselecionado" type="button" (click)="onSelect(aluno)">
+      <td><span class="id">{{aluno.id}}</span></td>
+      <td><span class="nome">{{aluno.nome}}</span></td>
+      <td><span class="nasc"> {{aluno.nasc | date}}</span></td>
+      <td><span class="casa">{{aluno.casa}}</span></td>
     </button>
-  </li>
+  </tr>
 </table>
